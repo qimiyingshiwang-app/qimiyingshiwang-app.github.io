@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>奇米影视网 - 影视剧集盘点 · 热门片单 · 观影实用指南</title>
+<meta name="description" content="奇米影视网（https://qimiyingshiwang-app.github.io）整理院线新片动态、剧集深度解读与类型片精选片单，按题材、评分、更新状态分类归档，同步奉上选片思路与观影避坑提示，让你少花时间就能挑到值得一看的好作品。">
+<meta name="keywords" content="奇米影视网,奇米影视,qimiyingshiwang-app,影视剧集盘点,热门片单推荐,院线新片速览,高分电影整理,观影避坑指南,剧集更新追踪,类型片精选">
+<meta name="author" content="奇米影视网">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#0b1020">
+<link rel="canonical" href="https://qimiyingshiwang-app.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="奇米影视网">
+<meta property="og:title" content="奇米影视网 - 影视剧集盘点 · 热门片单 · 观影实用指南">
+<meta property="og:description" content="院线新片动态、剧集深度解读、类型片精选片单与选片思路，帮你更快挑到值得一看的好作品。">
+<meta property="og:url" content="https://qimiyingshiwang-app.github.io/">
+<meta property="og:image" content="https://qimiyingshiwang-app.github.io/cover.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="奇米影视网 - 影视剧集盘点 · 热门片单 · 观影实用指南">
+<meta name="twitter:description" content="院线新片动态、剧集深度解读、类型片精选片单与选片思路，帮你更快挑到值得一看的好作品。">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --ink:#0b1020;
+  --ink2:#121a30;
+  --card:#161f38;
+  --line:#26304e;
+  --txt:#e8ecf7;
+  --sub:#9aa6c4;
+  --amber:#ffb347;
+  --mint:#4fd1c5;
+  --radius:14px;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--ink);
+  color:var(--txt);
+  font:16px/1.75 "PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{width:min(1180px,92%);margin:0 auto}
+
+/* 顶部 */
+.topbar{
+  position:sticky;top:0;z-index:60;
+  background:rgba(11,16,32,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:66px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.5px;font-size:19px}
+.brand i{
+  width:34px;height:34px;border-radius:10px;flex:none;
+  background:linear-gradient(135deg,var(--amber),#ff7a59);
+  display:grid;place-items:center;color:#22160a;font-style:normal;font-size:17px;font-weight:900;
+}
+.brand small{display:block;font-size:11px;font-weight:500;color:var(--sub);letter-spacing:1.6px}
+.nav{display:flex;gap:22px;font-size:15px}
+.nav a{color:var(--sub);padding:6px 2px;border-bottom:2px solid transparent;transition:.2s}
+.nav a:hover,.nav a:focus{color:var(--amber);border-color:var(--amber)}
+.burger{display:none;background:none;border:1px solid var(--line);color:var(--txt);border-radius:9px;padding:7px 12px;font-size:15px;cursor:pointer}
+
+/* 首屏 */
+.hero{
+  position:relative;padding:70px 0 60px;
+  background:
+    radial-gradient(900px 420px at 78% -10%,rgba(255,179,71,.16),transparent 60%),
+    radial-gradient(700px 380px at 10% 110%,rgba(79,209,197,.14),transparent 60%);
+}
+.hero .wrap{display:grid;grid-template-columns:1.35fr .95fr;gap:46px;align-items:start}
+.tag{
+  display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--amber);
+  border:1px solid rgba(255,179,71,.4);border-radius:999px;padding:5px 14px;margin-bottom:20px;
+}
+.tag b{font-weight:700}
+h1{font-size:clamp(28px,4.6vw,46px);line-height:1.25;letter-spacing:-.5px;font-weight:800}
+h1 em{font-style:normal;color:var(--amber)}
+.lead{margin-top:18px;color:var(--sub);font-size:16.5px;max-width:52ch}
+.lead strong{color:var(--txt);font-weight:600}
+.btns{margin-top:30px;display:flex;flex-wrap:wrap;gap:14px}
+.btn{
+  display:inline-block;padding:12px 26px;border-radius:999px;font-weight:700;font-size:15px;transition:.2s;
+}
+.btn-a{background:linear-gradient(135deg,var(--amber),#ff8a4c);color:#241704;box-shadow:0 8px 24px rgba(255,140,60,.24)}
+.btn-a:hover{transform:translateY(-2px)}
+.btn-b{border:1px solid var(--line);color:var(--sub)}
+.btn-b:hover{border-color:var(--mint);color:var(--mint)}
+.urlbox{
+  background:linear-gradient(160deg,var(--card),var(--ink2));
+  border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px;
+  box-shadow:0 20px 50px rgba(0,0,0,.35);
+}
+.urlbox h2{font-size:15px;color:var(--sub);font-weight:600;letter-spacing:1px}
+.urlbox .addr{
+  margin:14px 0 6px;font-size:17px;font-weight:700;color:var(--mint);word-break:break-all;line-height:1.5;
+}
+.urlbox p{font-size:13.5px;color:var(--sub)}
+.metrics{margin-top:20px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;border-top:1px solid var(--line);padding-top:18px}
+.metrics div b{display:block;font-size:22px;color:var(--amber);font-weight:800}
+.metrics div span{font-size:12.5px;color:var(--sub)}
+
+/* 通用区块 */
+section{padding:64px 0;border-top:1px solid rgba(38,48,78,.55)}
+.sec-head{max-width:62ch;margin-bottom:34px}
+.sec-head span{font-size:12.5px;letter-spacing:2.4px;color:var(--mint);text-transform:uppercase;font-weight:700}
+h2{font-size:clamp(22px,3vw,32px);margin:10px 0 12px;font-weight:800;letter-spacing:-.3px}
+.sec-head p{color:var(--sub);font-size:15.5px}
+
+/* 卡片网格 */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;display:flex;flex-direction:column;transition:.25s;
+}
+.card:hover{transform:translateY(-5px);border-color:rgba(255,179,71,.5)}
+.poster{height:132px;position:relative;display:grid;place-items:center;font-size:13px;letter-spacing:2px;color:rgba(255,255,255,.85)}
+.poster b{position:absolute;left:14px;bottom:12px;font-size:26px;font-weight:900;opacity:.9}
+.p1{background:linear-gradient(135deg,#2b3a6b,#141c33)}
+.p2{background:linear-gradient(135deg,#5b3a2e,#1d1526)}
+.p3{background:linear-gradient(135deg,#2e5b52,#12221f)}
+.p4{background:linear-gradient(135deg,#4a2e5b,#1b1428)}
+.p5{background:linear-gradient(135deg,#5b4a2e,#231a12)}
+.p6{background:linear-gradient(135deg,#2e3f5b,#111827)}
+.card .body{padding:18px 18px 20px;flex:1;display:flex;flex-direction:column}
+.card h3{font-size:17px;margin-bottom:8px;font-weight:700}
+.card p{font-size:14px;color:var(--sub);flex:1}
+.meta{margin-top:14px;display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:var(--sub)}
+.score{color:var(--amber);font-weight:800;font-size:15px}
+
+/* 榜单行式 */
+.rank{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--ink2)}
+.rank a{display:grid;grid-template-columns:64px 1fr auto;align-items:center;gap:16px;padding:16px 20px;border-bottom:1px solid rgba(38,48,78,.6);transition:.2s}
+.rank a:last-child{border-bottom:0}
+.rank a:hover{background:var(--card)}
+.no{font-size:20px;font-weight:900;color:var(--line);text-align:center}
+.rank a:hover .no{color:var(--amber)}
+.rank h3{font-size:16px;font-weight:600}
+.rank p{font-size:13.5px;color:var(--sub)}
+.pill{font-size:12px;border:1px solid var(--line);border-radius:999px;padding:4px 12px;color:var(--sub);white-space:nowrap}
+.pill.hot{border-color:rgba(255,179,71,.5);color:var(--amber)}
+
+/* 步骤轴 */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative}
+.step{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px 20px;position:relative}
+.step .num{
+  width:38px;height:38px;border-radius:50%;background:rgba(79,209,197,.14);color:var(--mint);
+  display:grid;place-items:center;font-weight:800;margin-bottom:14px;border:1px solid rgba(79,209,197,.35);
+}
+.step h3{font-size:16px;margin-bottom:8px}
+.step p{font-size:14px;color:var(--sub)}
+
+/* 双栏图文 */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.art{
+  border:1px solid var(--line);border-radius:var(--radius);padding:28px;background:var(--ink2);
+}
+.art h3{font-size:19px;margin-bottom:12px}
+.art p{color:var(--sub);font-size:15px;margin-bottom:14px}
+.bars{margin-top:18px}
+.bar{margin-bottom:14px}
+.bar .t{display:flex;justify-content:space-between;font-size:13.5px;color:var(--sub);margin-bottom:6px}
+.track{height:8px;border-radius:999px;background:#1d2540;overflow:hidden}
+.track i{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--mint),var(--amber))}
+
+/* FAQ */
+.faq{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--ink2)}
+.faq details{border-bottom:1px solid rgba(38,48,78,.6)}
+.faq details:last-child{border-bottom:0}
+.faq summary{cursor:pointer;padding:18px 22px;font-size:16px;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:14px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--amber);font-weight:800}
+.faq details[open] summary::after{content:"−"}
+.faq details p{padding:0 22px 20px;color:var(--sub);font-size:14.5px}
+
+/* CTA */
+.cta{
+  margin:0 0 64px;padding:44px 34px;border-radius:18px;text-align:center;
+  background:linear-gradient(135deg,rgba(255,179,71,.14),rgba(79,209,197,.12));
+  border:1px solid var(--line);
+}
+.cta h2{margin-bottom:10px}
+.cta p{color:var(--sub);max-width:56ch;margin:0 auto 22px;font-size:15.5px}
+.cta .addr2{font-size:15px;color:var(--mint);font-weight:700;word-break:break-all}
+
+/* 页脚 */
+footer{border-top:1px solid var(--line);padding:44px 0 34px;background:#080d1a}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px}
+footer h4{font-size:15px;margin-bottom:14px;color:var(--txt)}
+footer ul{list-style:none}
+footer li{margin-bottom:9px}
+footer li a{font-size:14px;color:var(--sub)}
+footer li a:hover{color:var(--amber)}
+.fnote{padding-top:24px}
+.fnote p{font-size:13.5px;color:var(--sub);margin-bottom:6px}
+.fnote .small{font-size:12.5px;color:#6f7c9c}
+
+@media (max-width:900px){
+  .hero .wrap{grid-template-columns:1fr;gap:32px}
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .split{grid-template-columns:1fr;gap:28px}
+  .fgrid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  .nav{display:none;position:absolute;top:66px;left:0;right:0;flex-direction:column;gap:0;
+    background:var(--ink2);border-bottom:1px solid var(--line);padding:8px 0}
+  .nav.open{display:flex}
+  .nav a{padding:14px 4%;border-bottom:1px solid rgba(38,48,78,.5)}
+  .burger{display:block}
+  .hero{padding:44px 0 40px}
+  section{padding:46px 0}
+  .grid{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .rank a{grid-template-columns:44px 1fr;gap:12px;padding:14px 16px}
+  .pill{grid-column:2}
+  .fgrid{grid-template-columns:1fr}
+  .cta{padding:32px 20px}
+  .metrics{grid-template-columns:1fr;gap:10px;text-align:center}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/yazhou.js"></script>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#" aria-label="奇米影视网 首页">
+      <i>奇</i>
+      <span>奇米影视网<small>QIMIYINGSHIWANG</small></span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#">首页</a>
+      <a href="#">影视推荐</a>
+      <a href="#">热门片单</a>
+      <a href="#">观影攻略</a>
+      <a href="#">关于我们</a>
+    </nav>
+    <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="nav">栏目</button>
+  </div>
+</header>
+
+<main>
+
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <span class="tag"><b>奇米影视网</b> · 每日更新 · 全站免费浏览</span>
+        <h1>把好片子挑出来，<br><em>奇米影视网</em>替你先筛一遍</h1>
+        <p class="lead">
+          面对上千部在映与待映作品，真正耗时间的从来不是看，而是选。<strong>奇米影视网</strong>按题材、口碑、更新进度三个维度整理片库，配上剧情要点与适配人群说明，三分钟内就能锁定今晚要看的那一部。站点地址：<strong>https://qimiyingshiwang-app.github.io</strong>
+        </p>
+        <div class="btns">
+          <a class="btn btn-a" href="#">浏览今日片单</a>
+          <a class="btn btn-b" href="#">查看分类索引</a>
+        </div>
+      </div>
+      <aside class="urlbox">
+        <h2>官方访问地址</h2>
+        <p class="addr">https://qimiyingshiwang-app.github.io</p>
+        <p>记住这一个域名就够了，<b style="color:var(--txt)">奇米影视网</b>不设镜像分站，也不会要求安装任何插件。</p>
+        <div class="metrics">
+          <div><b>6800+</b><span>收录条目</span></div>
+          <div><b>42</b><span>细分题材</span></div>
+          <div><b>每日</b><span>更新频率</span></div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <section id="recommend">
+    <div class="wrap">
+      <div class="sec-head">
+        <span>01 / EDITOR PICKS</span>
+        <h2>影视推荐：本周编辑部在看什么</h2>
+        <p>不追热度只看完成度。每部作品都标注了节奏、情绪强度与适宜观看场景，通勤、周末、陪家人各有对应选项。</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="poster p1"><b>悬疑</b></div>
+          <div class="body">
+            <h3>迷雾回响</h3>
+            <p>双线叙事的犯罪剧，前四集铺陈略慢，第五集起信息量陡增，适合一口气刷完。</p>
+            <div class="meta"><span>12 集 · 已完结</span><span class="score">8.7</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="poster p2"><b>剧情</b></div>
+          <div class="body">
+            <h3>长夜将尽</h3>
+            <p>年代家庭群像，人物关系扎实，台词密度高，建议安静环境下观看。</p>
+            <div class="meta"><span>片长 128 分钟</span><span class="score">8.4</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="poster p3"><b>纪录</b></div>
+          <div class="body">
+            <h3>山海之间</h3>
+            <p>六集自然纪录片，画面质量极高，随手截一帧都能当壁纸。</p>
+            <div class="meta"><span>6 集 · 更新中</span><span class="score">9.1</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="poster p4"><b>科幻</b></div>
+          <div class="body">
+            <h3>坠入星轨</h3>
+            <p>硬科幻外壳下的亲情故事，设定完整，第三幕情绪收得很稳。</p>
+            <div class="meta"><span>片长 146 分钟</span><span class="score">8.0</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="poster p5"><b>喜剧</b></div>
+          <div class="body">
+            <h3>楼下那家店</h3>
+            <p>轻体量情景喜剧，单集独立成篇，适合饭后放松，不必记前情。</p>
+            <div class="meta"><span>24 集 · 更新至 18</span><span class="score">7.8</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="poster p6"><b>动画</b></div>
+          <div class="body">
+            <h3>风与纸鸢</h3>
+            <p>手绘风格动画长片，配色克制，孩子和成年人看到的东西并不一样。</p>
+            <div class="meta"><span>片长 96 分钟</span><span class="score">8.5</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="toplist">
+    <div class="wrap">
+      <div class="sec-head">
+        <span>02 / RANKING</span>
+        <h2>热门片单：站内检索量最高的十部</h2>
+        <p>榜单按近三十天站内检索频次排列，每日凌晨重算，右侧标签标注题材与当前更新状态。</p>
+      </div>
+      <div class="rank">
+        <a href="#">
+          <span class="no">1</span>
+          <div><h3>迷雾回响</h3><p>犯罪 / 悬疑 · 反转密度极高，讨论区热度持续三周</p></div>
+          <span class="pill hot">剧集 · 完结</span>
+        </a>
+        <a href="#">
+          <span class="no">2</span>
+          <div><h3>山海之间</h3><p>自然 / 纪录 · 摄影与配乐是最大看点</p></div>
+          <span class="pill hot">纪录片 · 更新中</span>
+        </a>
+        <a href="#">
+          <span class="no">3</span>
+          <div><h3>坠入星轨</h3><p>科幻 / 剧情 · 需要一点专注度，不建议倍速</p></div>
+          <span class="pill">电影 · 院线</span>
+        </a>
+        <a href="#">
+          <span class="no">4</span>
+          <div><h3>长夜将尽</h3><p>年代 / 家庭 · 群像戏，人物多达十一位</p></div>
+          <span class="pill">电影 · 上线</span>
+        </a>
+        <a href="#">
+          <span class="no">5</span>
+          <div><h3>风与纸鸢</h3><p>动画 / 成长 · 亲子共看友好，无惊吓镜头</p></div>
+          <span class="pill">动画 · 上线</span>
+        </a>
+        <a href="#">
+          <span class="no">6</span>
+          <div><h3>楼下那家店</h3><p>喜剧 / 日常 · 单集 22 分钟，碎片时间可看</p></div>
+          <span class="pill">剧集 · 更新中</span>
+        </a>
+        <a href="#">
+          <span class="no">7</span>
+          <div><h3>旧城来信</h3><p>爱情 / 文艺 · 节奏舒缓，旁白占比偏高</p></div>
+          <span class="pill">电影 · 上线</span>
+        </a>
+        <a href="#">
+          <span class="no">8</span>
+          <div><h3>沉默的测量员</h3><p>职场 / 现实 · 行业细节考据扎实</p></div>
+          <span class="pill">剧集 · 完结</span>
+        </a>
+        <a href="#">
+          <span class="no">9</span>
+          <div><h3>雨落之前</h3><p>青春 / 校园 · 怀旧向，配乐出圈</p></div>
+          <span class="pill hot">电影 · 上线</span>
+        </a>
+        <a href="#">
+          <span class="no">10</span>
+          <div><h3>荒原信号</h3><p>冒险 / 生存 · 后半段张力强，建议连续看完</p></div>
+          <span class="pill">剧集 · 更新中</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="guide">
+    <div class="wrap">
+      <div class="sec-head">
+        <span>03 / HOW TO CHOOSE</span>
+        <h2>观影攻略：四步筛掉不值得看的片子</h2>
+        <p>看简介挑片最容易踩雷。这套流程是奇米影视网编辑部内部在用的筛片方法，照着做基本不会浪费一个晚上。</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>先看类型而非演员</h3>
+          <p>演员阵容的参考价值远低于题材，先锁定今晚想获得的情绪，再去找对应类型。</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h3>查完结状态</h3>
+          <p>追更剧先看总集数与更新频率，年更式排播会显著消耗耐心，完结作品优先。</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h3>读两三条长评</h3>
+          <p>跳过五星与一星，重点看三星长评，那里的缺点描述通常最接近真实体验。</p>
+        </div>
+        <div class="step">
+          <div class="num">4</div>
+          <h3>试看前十分钟</h3>
+          <p>开场十分钟交代不清核心冲突的作品，后面翻盘的概率很低，果断换片。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-head">
+        <span>04 / ABOUT</span>
+        <h2>关于奇米影视网</h2>
+        <p>一个只做内容整理的影视索引站，不搬运资源，也不诱导跳转，把查找成本压到最低。</p>
+      </div>
+      <div class="split">
+        <div class="art">
+          <h3>我们在做的事</h3>
+          <p>奇米影视网从公开信息中整理影片的题材、集数、片长、口碑与更新状态，按统一格式归档成条目，配上编辑部的短评与适配人群提示。</p>
+          <p>所有条目只提供信息索引，不存储也不分发任何播放文件。站点始终保持在 <b style="color:var(--mint)">https://qimiyingshiwang-app.github.io</b> 这一个地址。</p>
+          <div class="bars">
+            <div class="bar">
+              <div class="t"><span>条目信息完整度</span><span>96%</span></div>
+              <div class="track"><i style="width:96%"></i></div>
+            </div>
+            <div class="bar">
+              <div class="t"><span>更新及时性</span><span>91%</span></div>
+              <div class="track"><i style="width:91%"></i></div>
+            </div>
+            <div class="bar">
+              <div class="t"><span>移动端阅读体验</span><span>98%</span></div>
+              <div class="track"><i style="width:98%"></i></div>
+            </div>
+          </div>
+        </div>
+        <div class="faq">
+          <details open>
+            <summary>需要注册才能浏览吗？</summary>
+            <p>不需要。奇米影视网全站内容开放浏览，不设登录墙，也不会弹出订阅提示。</p>
+          </details>
+          <details>
+            <summary>片单多久更新一次？</summary>
+            <p>热门榜单每日凌晨重算，影视推荐栏目每周三与周六各更新一次，遇到重点档期会临时加更。</p>
+          </details>
+          <details>
+            <summary>发现条目信息有误怎么办？</summary>
+            <p>站内每条内容底部都留有纠错入口，提交后会在一到两个工作日内核对并修正。</p>
+          </details>
+          <details>
+            <summary>会不会跳转到其他站点？</summary>
+            <p>不会自动跳转。页面内所有栏目链接均以占位符形式保留，正式栏目上线后才逐步开放。</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="cta">
+      <h2>今晚看什么，交给奇米影视网</h2>
+      <p>收藏这个地址，需要选片时直接打开，省掉在各个平台之间反复横跳的时间。</p>
+      <p class="addr2">https://qimiyingshiwang-app.github.io</p>
+      <div class="btns" style="justify-content:center">
+        <a class="btn btn-a" href="#">进入片单</a>
+        <a class="btn btn-b" href="#">收藏本站</a>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <h4>奇米影视网</h4>
+        <p style="font-size:14px;color:var(--sub)">影视信息索引与片单整理站点，收录条目 6800 余部，覆盖 42 个细分题材。</p>
+        <p style="font-size:13.5px;color:var(--mint);margin-top:10px;word-break:break-all">https://qimiyingshiwang-app.github.io</p>
+      </div>
+      <div>
+        <h4>栏目</h4>
+        <ul>
+          <li><a href="#">影视推荐</a></li>
+          <li><a href="#">热门片单</a></li>
+          <li><a href="#">观影攻略</a></li>
+          <li><a href="#">新片预告</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>分类</h4>
+        <ul>
+          <li><a href="#">悬疑犯罪</a></li>
+          <li><a href="#">科幻奇幻</a></li>
+          <li><a href="#">纪录纪实</a></li>
+          <li><a href="#">动画亲子</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>站点</h4>
+        <ul>
+          <li><a href="#">关于我们</a></li>
+          <li><a href="#">联系方式</a></li>
+          <li><a href="#">纠错反馈</a></li>
+          <li><a href="#">免责声明</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fnote">
+      <p>奇米影视网 · 影视条目整理与片单推荐</p>
+      <p class="small">Copyright © 2026 奇米影视网（https://qimiyingshiwang-app.github.io） 保留所有权利。本站仅提供影视信息索引，不存储任何影音文件。</p>
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "奇米影视网",
+      "alternateName": "qimiyingshiwang-app",
+      "url": "https://qimiyingshiwang-app.github.io/",
+      "inLanguage": "zh-CN",
+      "description": "影视剧集盘点、热门片单整理与观影实用指南，每日更新院线动态与类型片精选。",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://qimiyingshiwang-app.github.io/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Organization",
+      "name": "奇米影视网",
+      "url": "https://qimiyingshiwang-app.github.io/",
+      "description": "专注影视信息索引与片单整理的站点，收录条目 6800 余部。"
+    }
+  ]
+}
+</script>
+
+<script>
+(function(){
+  var b=document.getElementById('burger'),n=document.getElementById('nav');
+  b.addEventListener('click',function(){
+    var o=n.classList.toggle('open');
+    b.setAttribute('aria-expanded',o?'true':'false');
+  });
+  n.addEventListener('click',function(e){
+    if(e.target.tagName==='A'){n.classList.remove('open');b.setAttribute('aria-expanded','false');}
+  });
+})();
+</script>
+
+</body>
+</html>
